@@ -18,3 +18,7 @@ def buscar_usuarios():
 def create_usuario():
     data = request.get_json()
     return UsuarioService.inserir_usuario(data.get('nome'), data.get('apelido'), data.get('email'))
+
+@endpoint.route("/")
+def index():
+    return "UP"
