@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from flask import Flask
 from controllers.usuario_controller import endpoint
 from services.scheduler_service import start_scheduler_email
