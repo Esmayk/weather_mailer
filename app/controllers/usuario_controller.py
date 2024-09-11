@@ -1,10 +1,13 @@
 import json
+from flask_cors import CORS
+from configs.config import Config
 from flask import Blueprint, request, jsonify
 from services.usuario_service import UsuarioService
-from configs.config import Config
+
+context_api = Config.CONTEXTO_API
 
 endpoint = Blueprint('usuarios', __name__)
-context_api = Config.CONTEXTO_API
+CORS(endpoint, resources={r"/*": {"origins": "*"}})
 
 @endpoint.route(f"{context_api}/usuarios", methods=['GET'])
 def buscar_usuarios():
