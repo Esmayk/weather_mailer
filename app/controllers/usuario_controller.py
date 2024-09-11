@@ -21,4 +21,4 @@ def create_usuario():
 
 @endpoint.route("/")
 def index():
-    return "UP"
+    return jsonify({"status":"UP"})
